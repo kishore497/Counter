@@ -1,37 +1,23 @@
 import React, {useState} from 'react'
+import './index.css'
 
 const Demo = () =>{
-    const [data, setData] = useState({
-        name:"",
-        email:"",
-        password:"",
-        confirmpassword:""
-    })
 
-    const changeHandler = (e) => {
-        setData({...data, [e.target.name]:e.target.value})
-    }
-
-
-    const submitHandler = (e) => {
-        e.preventDefault();
-        data.password === data.confirmpassword ? console.log(data) : console.log("Hi")
-    }
-
-
-
+    const [count, setCount] = useState(0);
+    
     return(
-        <div>
-            <center>
-                <form onSubmit={submitHandler}>
-                    <input type='text' name='name' value={data.name} onChange={changeHandler}/><br/>
-                    <input type='email' name='email' value={data.email} onChange={changeHandler}/><br/>
-                    <input type='password' name='password' value={data.password} onChange={changeHandler}/><br/>
-                    <input type='password' name='confirmpassword' value={data.confirmpassword} onChange={changeHandler}/><br/>
-                    <input type='submit' />
-                </form>
-            </center>
-        </div>
+
+        
+            <div className='container'>
+                <h1 className='heading'>Counter</h1>
+                <h1>{count}</h1>
+                <div>
+                    <button className='button' onClick={()=>setCount(count-1)}>Decrement</button>
+                    <button onClick={()=>setCount(count+1)}>Increment</button>
+                </div>
+            </div>
+                
+        
     )
 }
 
