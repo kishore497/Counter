@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './index.css'
 
-const Demo = () =>{
+const Counter = () =>{
 
     const [count, setCount] = useState(0);
     
@@ -21,4 +21,4 @@ const Demo = () =>{
     )
 }
 
-export default Demo
+export default Counter
